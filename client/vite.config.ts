@@ -11,17 +11,17 @@ export default defineConfig({
   base: "/", 
   resolve: {
     alias: {
-      // CORRECTED: '@' now points directly to the 'src' sibling folder
+      // CORRECTED: @ is relative to the current directory
       "@": path.resolve(__dirname, "src"), 
-      // CORRECTED: Must look up one directory (..) to find external folders
+      // CORRECTED: .. is used to look up one level for external folders
       "@shared": path.resolve(__dirname, "..", "shared"),
       "@assets": path.resolve(__dirname, "..", "attached_assets"),
     },
   },
-  // CORRECTED: The project root is simply the directory where this file sits
+  // CRITICAL: Anchors the project root to the 'client' folder
   root: __dirname, 
   build: {
-    // CORRECTED: Output must go up one directory (..) to place 'dist/public'
+    // CRITICAL: Tells Vite to place the files one folder up
     outDir: path.resolve(__dirname, "..", "dist/public"), 
     emptyOutDir: true,
   },
