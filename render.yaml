@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: torcrawler-app
+    env: docker
+    plan: starter
+    autoDeploy: true
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: TOR_PROXY_HOST
+        value: 127.0.0.1
+      - key: TOR_PROXY_PORT
+        value: 9050
+      - key: TOR_CONTROL_HOST
+        value: 127.0.0.1
+      - key: TOR_CONTROL_PORT
+        value: 9051
+      - key: TOR_TIMEOUT
+        value: 45
+      - key: REQUESTS_VERIFY_SSL
+        value: "false"
+      - key: ANALYSIS_MAX_WORKERS
+        value: 4
+      - key: VIRUSTOTAL_API_KEY
+        sync: false
+      - key: SHODAN_API_KEY
+        sync: false
+      - key: BACKGROUND_IMAGE_URL
+        sync: false

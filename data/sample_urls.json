@@ -1,0 +1,66 @@
+{
+    "sample_urls": [
+        "http://3g2upl4pq6kufc4m.onion",
+        "http://facebookcorewwwi.onion",
+        "http://duckduckgogg42ts.onion",
+        "http://zbwrjzpkp6mw73im.onion",
+        "http://7rmath4ro2of2a42.onion"
+    ],
+    "sample_metadata": {
+        "description": "Sample onion URLs for testing the Tor de-anonymization tool",
+        "note": "These are examples of legitimate onion sites for demonstration purposes",
+        "warning": "Always ensure you have proper authorization before analyzing any onion sites",
+        "categories": {
+            "search_engines": [
+                "http://3g2upl4pq6kufc4m.onion",
+                "http://duckduckgogg42ts.onion"
+            ],
+            "social_media": [
+                "http://facebookcorewwwi.onion"
+            ],
+            "other": [
+                "http://zbwrjzpkp6mw73im.onion",
+                "http://7rmath4ro2of2a42.onion"
+            ]
+        },
+        "last_updated": "2025-01-08",
+        "version": "1.0"
+    },
+    "testing_scenarios": {
+        "basic_analysis": {
+            "urls": [
+                "http://3g2upl4pq6kufc4m.onion"
+            ],
+            "description": "Single URL analysis test"
+        },
+        "batch_analysis": {
+            "urls": [
+                "http://3g2upl4pq6kufc4m.onion",
+                "http://facebookcorewwwi.onion",
+                "http://duckduckgogg42ts.onion"
+            ],
+            "description": "Multiple URL batch analysis test"
+        },
+        "mixed_validation": {
+            "urls": [
+                "http://3g2upl4pq6kufc4m.onion",
+                "http://invalid-onion-url.onion",
+                "not-a-url-at-all",
+                "http://facebookcorewwwi.onion"
+            ],
+            "description": "Test with mix of valid and invalid URLs"
+        }
+    },
+    "url_types": {
+        "v2_onions": [
+            "http://3g2upl4pq6kufc4m.onion",
+            "http://facebookcorewwwi.onion",
+            "http://duckduckgogg42ts.onion"
+        ],
+        "v3_onions": [
+            "http://zbwrjzpkp6mw73im2w3d2gfqojmq2etbvfxmjbvn3qbzr4e4x6q2z3qd.onion"
+        ],
+        "note": "v2 onions are deprecated but included for testing compatibility"
+    },
+    "legal_disclaimer": "This sample data is provided for educational and testing purposes only. Users must ensure they have proper authorization before analyzing any onion sites and must comply with all applicable laws and regulations."
+}

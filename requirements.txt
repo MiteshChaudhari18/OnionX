@@ -1,0 +1,10 @@
+beautifulsoup4>=4.13.4
+lxml>=5.4.0
+pandas>=2.3.1
+plotly>=6.2.0
+pysocks>=1.7.1
+reportlab>=4.4.3
+requests>=2.32.4
+streamlit>=1.48.0
+trafilatura>=2.0.0
+stem>=1.8.2

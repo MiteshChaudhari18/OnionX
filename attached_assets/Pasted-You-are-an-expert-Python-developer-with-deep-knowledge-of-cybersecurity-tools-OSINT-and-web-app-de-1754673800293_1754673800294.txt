@@ -1,0 +1,73 @@
+You are an expert Python developer with deep knowledge of cybersecurity tools, OSINT, and web app development.
+
+I have an existing project called "De-anonymizing Entities on Onion Sites Operating on the TOR Network".  
+The current codebase works locally with a Tkinter GUI, but I want to completely refactor it into a web application that can be deployed on Render or similar platforms.  
+The new app must have a clean, modern, and responsive UI/UX.
+
+---
+
+### 1. Purpose of the App
+The app should:
+- Take onion URLs or text input from the user.
+- Perform crawling, scraping, and analysis of onion sites.
+- Apply de-anonymization techniques using OSINT sources (e.g., reverse WHOIS, Shodan, metadata extraction).
+- Display results in an easy-to-read, interactive format (tables, charts, download options).
+- Allow exporting results (CSV, JSON, PDF).
+
+---
+
+### 2. Requirements
+
+#### **Backend Logic**
+- Use the same Tor connection logic as in my current project:
+    - Requests through Tor proxy (`socks5h://127.0.0.1:9050`).
+    - BeautifulSoup or similar for HTML parsing.
+    - Existing modules like `tor_analysis_tool.py` and `tor_deanonymizer_tool.py` should be adapted to work without Tkinter.
+- Keep the functionality of analyzing metadata, extracting possible real identities, cross-referencing OSINT databases.
+- All heavy-lifting code should be modular so it can be reused without UI changes.
+
+#### **Frontend / UI**
+- Implement using **Streamlit** (preferred for speed) or **Flask + HTML/JS + Bootstrap/Tailwind** (if needing more control).
+- The UI should have:
+    1. **Home page** → App intro, purpose, input form for onion URLs.
+    2. **Results page** → Displays real-time or processed output in tables and charts.
+    3. **Download options** → Export analysis in CSV, JSON, and PDF.
+    4. **Logs / progress updates** → Show crawling progress to the user.
+- Make it **mobile-friendly** and visually appealing with modern colors and layout.
+
+#### **Features**
+- Input: Single or multiple onion URLs (text box or file upload).
+- Output: Entities found, metadata, linked OSINT records, possible deanonymization leads.
+- Background Tor connection check before analysis.
+- Progress bar or status updates while crawling.
+- Save search history in the session.
+- Provide "Clear All" option.
+
+---
+
+### 3. Deployment Requirements
+- Must be deployable to **Render** (or HuggingFace Spaces) without extra GUI dependencies.
+- No Tkinter or local display requirements.
+- All Tor-related functions should work in a headless server environment.
+- Include `requirements.txt` for dependencies.
+- Include clear `README.md` with:
+    - Setup instructions (Tor installation/config for server use).
+    - Local run instructions.
+    - Deployment instructions for Render.
+
+---
+
+### 4. Implementation Notes
+- Keep the existing logic of `tor_analysis_tool.py` and `tor_deanonymizer_tool.py`, but refactor UI parts.
+- Use `streamlit` functions like `st.text_input`, `st.file_uploader`, `st.progress`, `st.dataframe`, `st.download_button` for interactivity.
+- For Flask option: Use Jinja2 templates, Bootstrap/TailwindCSS, and JavaScript for dynamic updates.
+- Ensure clean separation: `/core` for backend modules, `/app.py` or `/main.py` for UI entry point.
+- Use async (if possible) for crawling multiple sites at once.
+
+---
+
+### 5. Deliverables
+- Complete working web app version of the project.
+- All files with copy-paste ready code.
+- UI must be tested locally before deployment.
+- Include sample test data for demo.
